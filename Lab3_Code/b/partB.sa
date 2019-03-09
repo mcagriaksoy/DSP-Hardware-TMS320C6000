@@ -1,0 +1,19 @@
+		.text
+		.global	_partB
+_partB:	.cproc	ap, bp, len
+		.reg		a, b, prod, result
+		ZERO		result
+loop:		.trip		len
+		LDH 		*ap++, a
+		LDH		*bp++, b
+		MPY		a, a, a
+		MPY		b, b, b
+		SUB		a,b,prod
+		ABS		prod,prod
+		ADD		result, prod, result
+		SUB		len, 1, len
+  [len]	B		loop
+		.return	result
+		.endproc
+
+

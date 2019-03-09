@@ -1,0 +1,18 @@
+		.text
+		.global _partC
+	_partC:	.cproc	ap, thres, length 
+		.reg		a, dummy
+		ZERO		dummy
+loop:		.trip		length
+		LDB		*ap, a
+		CMPLTU	a, thres, dummy
+[dummy]	 B		ZERO
+		MVK		255, a
+		B		high
+		MVK		0, a	
+		STB		a, *ap
+		SUB		length, 1, length
+		ADD		ap,1,ap
+[length]	B		loop
+		.endproc
+

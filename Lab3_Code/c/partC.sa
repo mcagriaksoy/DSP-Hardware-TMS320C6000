@@ -1,0 +1,15 @@
+		.text
+		.global _partC
+				
+_partC:	.cproc	ap, thres, length 
+		.reg		a, result
+		ZERO		result
+loop:		.trip		length
+		LDH		*ap++, a
+		CMPLTU	thres, a, result
+[result]	MV		255, a	
+[!result]	MV		0, a	
+		SUB		length, 1, length
+[length]	B		loop
+		.endproc
+
