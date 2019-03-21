@@ -6,8 +6,11 @@ Course Website: http://eem.eskisehir.edu.tr/Ders.aspx?dersId=182
 
 
 Lab1: - Introduction the board, sin wave creation in DSP
+
 Lab2: -
+
 Lab3: -
+
 Lab4: - Power calculation from mic. input and output the input sound.
 
 # Board
