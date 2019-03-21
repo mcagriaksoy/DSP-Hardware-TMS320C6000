@@ -4,6 +4,12 @@ This repo is created for Digital Signal Processing Hardware Lecture which is ong
 
 Course Website: http://eem.eskisehir.edu.tr/Ders.aspx?dersId=182
 
+
+Lab1: - Introduction the board, sin wave creation in DSP
+Lab2: -
+Lab3: -
+Lab4: - Power calculation from mic. input and output the input sound.
+
 # Board
 
 ![DSP-HW](https://github.com/mcagriaksoy/DSP-Hardware-TMS320C6000/blob/master/s-l1600.jpg)
