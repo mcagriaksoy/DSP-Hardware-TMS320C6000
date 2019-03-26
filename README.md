@@ -13,6 +13,8 @@ Lab3: -
 
 Lab4: - Power calculation from mic. input and output the input sound.
 
+Lab5: FIR Low-Pass Filter design and integrate on board. Take data from input (mic) multiply with our filter and output the data.
+
 # Board
 
 ![DSP-HW](https://github.com/mcagriaksoy/DSP-Hardware-TMS320C6000/blob/master/s-l1600.jpg)
