@@ -1,0 +1,75 @@
+% Sampling rate is 16kHz
+sample_rate = 16000;
+
+% Choose filter cutoff frequency (1 kHz)
+cutoff_hz = 1000;
+
+ 
+% Normalize cutoff frequency (wrt Nyquist frequency)
+nyq_freq = sample_rate / 2;
+cutoff_norm = cutoff_hz / nyq_freq;
+
+% FIR filter order (i.e. number of coefficients - 1)
+order = 10;
+
+% filter coefficients, there are (number of sample+1)
+fir_coeff = fir1(order, cutoff_norm);
+
+% show
+freqz(fir_coeff,1)
+figure
+% open file
+fil = fopen('coeffTable.h','wt');
+
+fprintf(fil,'float fir_10[11] = {')
+
+for j = 1:size(fir_coeff,1)
+
+	fprintf(fil,'%f,',fir_coeff(j,:));
+end
+
+fprintf(fil,'};\n')
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% FIR filter order (i.e. number of coefficients - 1)
+order = 30;
+
+% filter coefficients, there are (number of sample+1)
+fir_coeff = fir1(order, cutoff_norm);
+
+% show
+freqz(fir_coeff,1)
+figure
+fprintf(fil,'float fir_30[31] = {')
+
+for j = 1:size(fir_coeff,1)
+
+	fprintf(fil,'%f,',fir_coeff(j,:));
+end
+
+fprintf(fil,'};\n')
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% FIR filter order (i.e. number of coefficients - 1)
+order = 50;
+
+% filter coefficients, there are (number of sample+1)
+fir_coeff = fir1(order, cutoff_norm);
+
+% show
+freqz(fir_coeff,1)
+
+fprintf(fil,'float fir_50[51] = {')
+
+for j = 1:size(fir_coeff,1)
+
+	fprintf(fil,'%f,',fir_coeff(j,:));
+end
+
+fprintf(fil,'};')
+
+
+fclose(fil)

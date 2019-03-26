@@ -1,0 +1,47 @@
+//loop_poll.c loop program using polling
+#include "DSK6713_AIC23.h"	        //codec support
+#include "coeffTable.h"
+Uint32 fs=DSK6713_AIC23_FREQ_16KHZ;	//set sampling rate
+#define DSK6713_AIC23_INPUT_MIC 0x0015
+#define DSK6713_AIC23_INPUT_LINE 0x0011
+Uint16 inputsource=DSK6713_AIC23_INPUT_MIC; // select input
+
+short n = 11;
+short yn = 0;
+short dly[11];
+
+void main()
+{
+  short sample_data;
+
+  comm_poll();	            //init DSK, codec, McBSP
+  DSK6713_LED_init();			      //init LED from BSL
+  DSK6713_DIP_init();			      //init DIP from BSL
+
+
+  while(1)				    //infinite loop
+  {
+    sample_data = input_left_sample(); //input sample
+
+    if(DSK6713_DIP_get(0)==0) 		  //=0 if DIP switch #0 pressed
+    {
+
+    	short i;
+    	yn = 0;
+    	dly[0] = sample_data;
+
+    	for(i = 0; i<n; i++) {
+    		yn += ( fir_10[i] * dly[i] ); }
+    	for(i = n-1; i>0; i--) {
+    		dly[i] = dly[i-1]; }
+
+    	output_left_sample(yn);
+
+    }
+
+    else { output_left_sample(sample_data);   }
+
+
+  }
+}
+ 
