@@ -14,6 +14,8 @@ Lab 2 Part C Ramp Wave Result:
 
 Lab3: - In this experiment, normal assembly and linear assembly languages were processed. The differences between them were seen. Some interactions (like SUB, ADD, ABS..) were practiced by writing the code. By defining a threshold point, this limit was used in both normal and linear assembly languages.
 
+Lab3 changed assembly codes is marked below:
+![DSP-HW](https://github.com/mcagriaksoy/DSP-Hardware-TMS320C6000/blob/master/Lab3_Code/asm.JPG)
 Lab4: - Power calculation from mic. input and output the input sound. Inthis experiment, we discussed about the effect of the sampling frequencies and power values. At both low and high frequencies, the sound was heard not good. But at 44 Khz, the best sound was heard.And second part, we observed that the sound power variesaccording to the sound leveland as a result of our observations in thisexperiment, we found a linear relationship between the these two.
 
 
