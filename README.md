@@ -17,6 +17,7 @@ Lab3: - In this experiment, normal assembly and linear assembly languages were p
 Lab3 changed assembly codes is marked below:
 
 ![DSP-HW](https://github.com/mcagriaksoy/DSP-Hardware-TMS320C6000/blob/master/Lab3_Code/asm.JPG)
+
 Lab4: - Power calculation from mic. input and output the input sound. Inthis experiment, we discussed about the effect of the sampling frequencies and power values. At both low and high frequencies, the sound was heard not good. But at 44 Khz, the best sound was heard.And second part, we observed that the sound power variesaccording to the sound leveland as a result of our observations in thisexperiment, we found a linear relationship between the these two.
 
 
